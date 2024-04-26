@@ -14,8 +14,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Write base64 to file decoded
-        run: echo "$CONTENT" | base64 -d > out.txt
+        run: echo "$CONTENT" | base64 -d > ~/out.txt
 
       - name: Write to stdout
-        run: cat out.txt
+        run: cat ~/out.txt
   
