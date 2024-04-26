@@ -1,0 +1,21 @@
+name: Convert base64 from environment to file
+
+on: [push]
+
+env:
+  CONTENT: VGhlcmUgd2FzIG9uY2UgYSBtYW4gdGhhdCB0cmllZCB0byBkZWJ1ZyBoaXMgQ0k6Q0QuIEhpcyBuYW1lIHdhcyBEb21pYW4K
+
+jobs:
+  Convert-Base64:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Write base64 to file decoded
+        run: echo "$CONTENT" | base64 -d > out.txt
+
+      - name: Write to stdout
+        run: cat out.txt
+  
