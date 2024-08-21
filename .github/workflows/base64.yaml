@@ -18,4 +18,14 @@ jobs:
 
       - name: Write to stdout
         run: cat ~/out.txt
-  
+
+  Outputs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Define output
+        run: echo 'name=spongebob;age=36' >> $GITHUB_OUTPUT
+        id: spongebob
+
+      - name: Echo output
+        run: echo "${{ steps.spongebob.outputs.name }} is ${{ steps.spongebob.outputs.age }} years old"
