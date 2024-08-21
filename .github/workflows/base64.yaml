@@ -24,8 +24,8 @@ jobs:
 
     steps:
       - name: Define output
-        run: echo 'name=spongebob|age=36' >> $GITHUB_OUTPUT
+        run: echo 'NAME=spongebob;AGE=36' >> $GITHUB_OUTPUT
         id: spongebob
 
       - name: Echo output
-        run: echo "${{ steps.spongebob.outputs.name }} is ${{ steps.spongebob.outputs.age }} years old"
+        run: echo "${{ steps.spongebob.outputs.NAME }} is ${{ steps.spongebob.outputs.AGE }} years old"
