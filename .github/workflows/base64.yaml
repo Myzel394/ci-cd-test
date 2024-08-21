@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Define output
-        run: echo 'name=spongebob;age=36' >> $GITHUB_OUTPUT
+        run: echo 'name=spongebob|age=36' >> $GITHUB_OUTPUT
         id: spongebob
 
       - name: Echo output
