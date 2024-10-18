@@ -1,0 +1,15 @@
+name: Convert base64 from environment to file
+
+on: [push]
+
+jobs:
+  outputs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Define output
+        run: echo 'server_ip=1.1.1.1' >> $GITHUB_OUTPUT
+        id: server_ip
+
+      - name: Echo output
+        run: echo "${{ steps.server_ip.outputs.server_ip }}"
